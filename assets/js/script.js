@@ -14,11 +14,18 @@ window.addEventListener("load",()=>{
  * add event on multiple elements
  * 
  */
-const addEventOnElements = function(elements,eventType,callback){
-   for (let i=0; len = elements.length; i<len, i++){
+
+
+
+
+const addEventOnElements = function(elements, eventType, callback) {
+   console.log("elements length", elements.length);
+   for (let i = 0, len = elements.length; i < len; i++) {
+      console.log("elements", elements[i]);
       elements[i].addEventListener(eventType, callback);
    }
 }
+
 
 
 
@@ -46,10 +53,14 @@ addEventOnElements(navTogglers, "click", toggleNav);
  * Header
  */
 
-const header=document.querySelector("[data-header]");
 
-window.addEventListener("scroll",function(){
+const  header = document.querySelector("[data-header]");
 
-header.classList[this.window.scrollY>100 ? "add" : "remove"]("active");
+window.addEventListener("scroll",function () {
+   header.classList[window.scrollY > 100 ? "add" : "remove"]("active");
+
+
+
 
 });
+
